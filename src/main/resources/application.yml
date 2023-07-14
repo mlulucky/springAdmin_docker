@@ -8,3 +8,7 @@ spring:
 server:
   port: 8080
 
+mybatis:
+  type-aliases-package: com.example.docker_moon.dto
+  mapper-locations: classpath:/mapper/*Mapper.xml
+#  mapper location 에 맞게 mapper 폴더안에 mapper.xml 파일이 있어야 mybatis 가 적용이 된다!

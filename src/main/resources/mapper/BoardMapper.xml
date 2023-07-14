@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.docker_moon.mapper.BoardMapper">
+<!--  application.yml 에 mybatis 경로 설정해줘야함 -->
+    <insert id="insertOne" useGeneratedKeys="true" keyProperty="b_id" parameterType="BoardDto">
+        INSERT INTO board (title, likes) VALUE ( #{title}, #{likes} )
+    </insert>
+    <update id="updateOne" parameterType="BoardDto">
+        UPDATE board SET title=#{title}, likes=#{likes} WHERE b_id=#{b_id}
+    </update>
+<!--  b_id 는 테이블의 컬럼명 = # { dto 의 필드명 }  -->
+    <delete id="deleteOne">
+        DELETE FROM board WHERE b_id=#{b_id}
+    </delete>
+
+    <select id="findByBId" resultType="BoardDto">
+        SELECT * FROM board WHERE b_id=#{b_id}
+    </select>
+
+    <select id="findAll" resultType="BoardDto">
+        SELECT * FROM board
+    </select>
+
+
+
+</mapper>

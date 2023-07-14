@@ -6,9 +6,9 @@ import java.util.Date;
 
 @Data
 public class BoardDto {
-    private int bId;
+    private int b_id;
     private String title;
     private int likes;
-    private Date postTime;
-    private Date updateTime;
+    private Date post_time;
+    private Date update_time;
 }
